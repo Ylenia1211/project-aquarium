@@ -8,6 +8,7 @@ import java.util.Date;
 
 @Entity
 public class Animal{
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -39,7 +40,11 @@ public class Animal{
          this.dietaryRegime = dietaryRegime;
          this.threatLevel = threatLevel;
     }
-
+    public Animal(String name, String species) {
+        super();
+        this.name = name;
+        this.species = species;
+    }
     public Animal(Long id, String nom, String species) {
         super();
         this.id = id;

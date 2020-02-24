@@ -18,8 +18,6 @@ import java.util.Map;
 
 @RestController
 public class AnimalController {
-
-    @Autowired
     AnimalService animalService;
 
     @GetMapping("/animal")

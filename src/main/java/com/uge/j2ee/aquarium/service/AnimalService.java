@@ -3,7 +3,9 @@ package com.uge.j2ee.aquarium.service;
 import com.uge.j2ee.aquarium.model.Animal;
 import com.uge.j2ee.aquarium.repository.AnimalRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class AnimalService {
 
     @Autowired

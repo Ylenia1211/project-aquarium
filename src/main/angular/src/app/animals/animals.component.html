@@ -1,0 +1,7 @@
+<p>animals works!</p>
+<app-creation-animal (onSave)="refresh($event)"></app-creation-animal>
+<ul>
+  <li *ngFor=" let fish of animals">
+    <app-animal [animal]="fish" (onDelete)="refresh($event)"></app-animal>
+  </li>
+</ul>

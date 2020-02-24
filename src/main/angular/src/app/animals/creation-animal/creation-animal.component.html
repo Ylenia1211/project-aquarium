@@ -1,0 +1,15 @@
+<p>creation-animal works!</p>
+<form [formGroup]="addAnimalForm">
+
+  <label>
+    Add Name Animal (Fish):
+    <input type="text" formControlName="name">
+  </label>
+
+  <label>
+    Add Species:
+    <input type="text" formControlName="species">
+  </label>
+
+  <button (click)="save($event)" [disabled]="!addAnimalForm.valid">Save</button>
+</form>

@@ -22,6 +22,14 @@ public class Employee {
     public Employee() {
     }
 
+    public Long getIdEmployee() {
+        return idEmployee;
+    }
+
+    public void setIdEmployee(Long idEmployee) {
+        this.idEmployee = idEmployee;
+    }
+
     public String getName() {
         return name;
     }

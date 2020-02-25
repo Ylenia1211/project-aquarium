@@ -1,4 +1,4 @@
-package com.uge.j2ee.aquarium;
+package com.uge.j2ee.aquarium.controller;
 
 
 import com.uge.j2ee.aquarium.model.Animal;

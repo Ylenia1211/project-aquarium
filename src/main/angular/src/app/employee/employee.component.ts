@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Animal} from "../Animal";
 import {Employee} from "../Employee";
-import {AnimalServiceService} from "../animal-service.service";
 import {EmployeeService} from "../employee.service";
 
 @Component({
@@ -10,7 +8,7 @@ import {EmployeeService} from "../employee.service";
   styleUrls: ['./employee.component.css']
 })
 export class EmployeeComponent implements OnInit {
-  employees: Array<Employee>
+  employees: Array<Employee>;
   constructor(private employeeService: EmployeeService) {
   }
 

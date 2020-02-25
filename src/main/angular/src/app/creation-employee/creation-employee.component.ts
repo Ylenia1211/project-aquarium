@@ -19,8 +19,7 @@ export class CreationEmployeeComponent implements OnInit {
   }
 
   createEmployee(): void {
-    this. employeeService.createEmployee(this.user)
-      .subscribe( data => {
+    this.employeeService.createEmployee(this.user).subscribe( data => {
         alert("Employee Aquarium created successfully!");
       });
 

@@ -10,6 +10,9 @@ import { AnimalsComponent } from './animals/animals.component';
 import {HttpClientModule} from "@angular/common/http";
 import { EmployeeComponent } from './employee/employee.component';
 import { CreationEmployeeComponent } from './creation-employee/creation-employee.component';
+import { MenuActionComponent } from './menu-action/menu-action.component';
+import { LoginComponent } from './login/login.component';
+import { LogoutComponent } from './logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { CreationEmployeeComponent } from './creation-employee/creation-employee
     CreationAnimalComponent,
     AnimalsComponent,
     EmployeeComponent,
-    CreationEmployeeComponent
+    CreationEmployeeComponent,
+    MenuActionComponent,
+    LoginComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,

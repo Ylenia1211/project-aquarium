@@ -1,1 +1,18 @@
-<p>Name: <b>{{animal.name.toUpperCase()}}</b>Species:  {{animal.species}} <button *ngIf="loginService.isUserLoggedIn()" (click)="delete()"> Delete </button></p>
+<!--<p>Name: <b>{{animal.name.toUpperCase()}}</b>Species:  {{animal.species}} <button *ngIf="loginService.isUserLoggedIn()" (click)="delete()"> Delete </button></p>-->
+<div class="col-md-6">
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Species</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td> <b>{{animal.name.toUpperCase()}}</b></td>
+      <td> {{animal.species}}</td>
+      <td> <button class="btn btn-danger" *ngIf="loginService.isUserLoggedIn()" (click)="delete()"> Delete </button></td>
+    </tr>
+    </tbody>
+  </table>
+</div>

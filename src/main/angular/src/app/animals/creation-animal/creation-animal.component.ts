@@ -10,7 +10,7 @@ import {Router} from "@angular/router";
   styleUrls: ['./creation-animal.component.css']
 })
 export class CreationAnimalComponent implements OnInit {
-  addAnimalForm = new FormGroup({
+    addAnimalForm = new FormGroup({
     name: new FormControl("", Validators.required),
     species: new FormControl("", Validators.required)
   });

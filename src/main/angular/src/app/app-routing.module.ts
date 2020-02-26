@@ -10,7 +10,7 @@ import {AnimalsComponent} from "./animals/animals.component";
 
 
 const routes: Routes = [
-  { path:'', component: EmployeeComponent},
+  { path:'viewEmployee', component: EmployeeComponent},
   { path:'createEmployee', component: CreationEmployeeComponent},
   { path: 'viewAnimal', component: AnimalsComponent },
   { path: 'addAnimal', component: CreationAnimalComponent },

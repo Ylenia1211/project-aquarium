@@ -1,1 +1,1 @@
-<p>Name: <b>{{animal.name.toUpperCase()}}</b>Species:  {{animal.species}} <button (click)="delete()"> Delete </button></p>
+<p>Name: <b>{{animal.name.toUpperCase()}}</b>Species:  {{animal.species}} <button *ngIf="loginService.isUserLoggedIn()" (click)="delete()"> Delete </button></p>

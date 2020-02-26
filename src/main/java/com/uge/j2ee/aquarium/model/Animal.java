@@ -45,6 +45,15 @@ public class Animal{
         this.name = name;
         this.species = species;
     }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public Animal(Long id, String nom, String species) {
         super();
         this.id = id;

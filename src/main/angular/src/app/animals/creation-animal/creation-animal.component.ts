@@ -2,6 +2,7 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {Animal} from "../../Animal";
 import {AnimalServiceService} from "../../animal-service.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-creation-animal',
@@ -16,7 +17,7 @@ export class CreationAnimalComponent implements OnInit {
   @Output()
   onSave: EventEmitter<Animal> = new EventEmitter<Animal>()
 
-  constructor(private animalService: AnimalServiceService) {
+  constructor(private animalService: AnimalServiceService,  private router: Router) {
   }
 
   ngOnInit() {
@@ -26,6 +27,9 @@ export class CreationAnimalComponent implements OnInit {
     this.animalService.save(this.addAnimalForm.value).subscribe(
       data => {
         this.onSave.emit()
+        alert("Fish added successfully!");
+        this.router.navigate(['viewAnimal']);
+
       },
       error => console.log(error)
     )

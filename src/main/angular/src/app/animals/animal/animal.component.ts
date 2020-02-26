@@ -1,6 +1,7 @@
  import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
  import {Animal} from "../../Animal";
  import {AnimalServiceService} from "../../animal-service.service";
+ import {AuthenticationService} from "../../authentication.service";
 
 @Component({
   selector: 'app-animal',
@@ -14,7 +15,7 @@ export class AnimalComponent implements OnInit {
   @Output()
   onDelete: EventEmitter<Animal> = new EventEmitter<Animal>();
 
-  constructor(private animalService: AnimalServiceService) {
+  constructor(private animalService: AnimalServiceService, public loginService:AuthenticationService) {
   }
 
   ngOnInit() {
@@ -24,6 +25,7 @@ export class AnimalComponent implements OnInit {
     this.animalService.delete(this.animal).subscribe(
       data => {
         this.onDelete.emit(this.animal)
+        alert("Fish deleted successfully!");
       }
     )
   }

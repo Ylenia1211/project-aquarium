@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {EmployeeService} from "../employee.service";
 import {Employee} from "../Employee";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-creation-employee',
@@ -12,7 +13,7 @@ export class CreationEmployeeComponent implements OnInit {
   user: Employee = new Employee(0,"","");
 
   constructor(
-    private employeeService: EmployeeService
+    private employeeService: EmployeeService,
   ) { }
 
   ngOnInit() {
@@ -20,7 +21,8 @@ export class CreationEmployeeComponent implements OnInit {
 
   createEmployee(): void {
     this.employeeService.createEmployee(this.user).subscribe( data => {
-        alert("Employee Aquarium created successfully!");
+      alert("Employee Aquarium created successfully!");
+
       });
 
   };

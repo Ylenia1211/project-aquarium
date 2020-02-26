@@ -97,12 +97,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AnimalComponent", function() { return AnimalComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
 /* harmony import */ var _animal_service_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../animal-service.service */ "./src/app/animal-service.service.ts");
+/* harmony import */ var _authentication_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../authentication.service */ "./src/app/authentication.service.ts");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
 
 
 
+
+
+function AnimalComponent_button_5_Template(rf, ctx) { if (rf & 1) {
+    const _r19 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function AnimalComponent_button_5_Template_button_click_0_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r19); const ctx_r18 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r18.delete(); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " Delete ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} }
 class AnimalComponent {
-    constructor(animalService) {
+    constructor(animalService, loginService) {
         this.animalService = animalService;
+        this.loginService = loginService;
         this.onDelete = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
     }
     ngOnInit() {
@@ -110,28 +122,28 @@ class AnimalComponent {
     delete() {
         this.animalService.delete(this.animal).subscribe(data => {
             this.onDelete.emit(this.animal);
+            alert("Fish deleted successfully!");
         });
     }
 }
-AnimalComponent.ɵfac = function AnimalComponent_Factory(t) { return new (t || AnimalComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_animal_service_service__WEBPACK_IMPORTED_MODULE_1__["AnimalServiceService"])); };
-AnimalComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: AnimalComponent, selectors: [["app-animal"]], inputs: { animal: "animal" }, outputs: { onDelete: "onDelete" }, decls: 7, vars: 2, consts: [[3, "click"]], template: function AnimalComponent_Template(rf, ctx) { if (rf & 1) {
+AnimalComponent.ɵfac = function AnimalComponent_Factory(t) { return new (t || AnimalComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_animal_service_service__WEBPACK_IMPORTED_MODULE_1__["AnimalServiceService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_authentication_service__WEBPACK_IMPORTED_MODULE_2__["AuthenticationService"])); };
+AnimalComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: AnimalComponent, selectors: [["app-animal"]], inputs: { animal: "animal" }, outputs: { onDelete: "onDelete" }, decls: 6, vars: 3, consts: [[3, "click", 4, "ngIf"], [3, "click"]], template: function AnimalComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "Name: ");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "b");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "button", 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function AnimalComponent_Template_button_click_5_listener($event) { return ctx.delete(); });
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, " Delete ");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](5, AnimalComponent_button_5_Template, 2, 0, "button", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.animal.name.toUpperCase());
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("Species: ", ctx.animal.species, " ");
-    } }, styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FuaW1hbHMvYW5pbWFsL2FuaW1hbC5jb21wb25lbnQuY3NzIn0= */"] });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.loginService.isUserLoggedIn());
+    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_3__["NgIf"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FuaW1hbHMvYW5pbWFsL2FuaW1hbC5jb21wb25lbnQuY3NzIn0= */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](AnimalComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
@@ -139,7 +151,7 @@ AnimalComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineCo
                 templateUrl: './animal.component.html',
                 styleUrls: ['./animal.component.css']
             }]
-    }], function () { return [{ type: _animal_service_service__WEBPACK_IMPORTED_MODULE_1__["AnimalServiceService"] }]; }, { animal: [{
+    }], function () { return [{ type: _animal_service_service__WEBPACK_IMPORTED_MODULE_1__["AnimalServiceService"] }, { type: _authentication_service__WEBPACK_IMPORTED_MODULE_2__["AuthenticationService"] }]; }, { animal: [{
             type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
         }], onDelete: [{
             type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
@@ -168,16 +180,16 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function AnimalsComponent_li_1_Template(rf, ctx) { if (rf & 1) {
-    const _r86 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+    const _r7 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "li");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "app-animal", 1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("onDelete", function AnimalsComponent_li_1_Template_app_animal_onDelete_1_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r86); const ctx_r85 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r85.refresh($event); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("onDelete", function AnimalsComponent_li_1_Template_app_animal_onDelete_1_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r7); const ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r6.refresh($event); });
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const fish_r84 = ctx.$implicit;
+    const fish_r5 = ctx.$implicit;
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("animal", fish_r84);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("animal", fish_r5);
 } }
 class AnimalsComponent {
     constructor(animalService) {
@@ -224,14 +236,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
 /* harmony import */ var _animal_service_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../animal-service.service */ "./src/app/animal-service.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+
 
 
 
 
 
 class CreationAnimalComponent {
-    constructor(animalService) {
+    constructor(animalService, router) {
         this.animalService = animalService;
+        this.router = router;
         this.addAnimalForm = new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormGroup"]({
             name: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]("", _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required),
             species: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]("", _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required)
@@ -243,10 +258,12 @@ class CreationAnimalComponent {
     save($event) {
         this.animalService.save(this.addAnimalForm.value).subscribe(data => {
             this.onSave.emit();
+            alert("Fish added successfully!");
+            this.router.navigate(['viewAnimal']);
         }, error => console.log(error));
     }
 }
-CreationAnimalComponent.ɵfac = function CreationAnimalComponent_Factory(t) { return new (t || CreationAnimalComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_animal_service_service__WEBPACK_IMPORTED_MODULE_2__["AnimalServiceService"])); };
+CreationAnimalComponent.ɵfac = function CreationAnimalComponent_Factory(t) { return new (t || CreationAnimalComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_animal_service_service__WEBPACK_IMPORTED_MODULE_2__["AnimalServiceService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"])); };
 CreationAnimalComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: CreationAnimalComponent, selectors: [["app-creation-animal"]], outputs: { onSave: "onSave" }, decls: 9, vars: 2, consts: [[3, "formGroup"], ["type", "text", "formControlName", "name"], ["type", "text", "formControlName", "species"], [3, "disabled", "click"]], template: function CreationAnimalComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "form", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "label");
@@ -274,7 +291,7 @@ CreationAnimalComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵ
                 templateUrl: './creation-animal.component.html',
                 styleUrls: ['./creation-animal.component.css']
             }]
-    }], function () { return [{ type: _animal_service_service__WEBPACK_IMPORTED_MODULE_2__["AnimalServiceService"] }]; }, { onSave: [{
+    }], function () { return [{ type: _animal_service_service__WEBPACK_IMPORTED_MODULE_2__["AnimalServiceService"] }, { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] }]; }, { onSave: [{
             type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
         }] }); })();
 
@@ -310,7 +327,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const routes = [
-    { path: '', component: _employee_employee_component__WEBPACK_IMPORTED_MODULE_2__["EmployeeComponent"] },
+    { path: 'viewEmployee', component: _employee_employee_component__WEBPACK_IMPORTED_MODULE_2__["EmployeeComponent"] },
     { path: 'createEmployee', component: _creation_employee_creation_employee_component__WEBPACK_IMPORTED_MODULE_3__["CreationEmployeeComponent"] },
     { path: 'viewAnimal', component: _animals_animals_component__WEBPACK_IMPORTED_MODULE_7__["AnimalsComponent"] },
     { path: 'addAnimal', component: _animals_creation_animal_creation_animal_component__WEBPACK_IMPORTED_MODULE_6__["CreationAnimalComponent"] },
@@ -907,7 +924,7 @@ class MenuActionComponent {
     }
 }
 MenuActionComponent.ɵfac = function MenuActionComponent_Factory(t) { return new (t || MenuActionComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_authentication_service__WEBPACK_IMPORTED_MODULE_1__["AuthenticationService"])); };
-MenuActionComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: MenuActionComponent, selectors: [["app-menu-action"]], decls: 19, vars: 5, consts: [[1, "navbar", "navbar-expand-md", "navbar-dark", "bg-dark"], ["href", "", 1, "navbar-brand"], [1, "navbar-nav"], ["routerLink", "/", "class", "nav-link", 4, "ngIf"], ["routerLink", "/createEmployee", "class", "nav-link", 4, "ngIf"], ["routerLink", "/addAnimal", "class", "nav-link", 4, "ngIf"], ["routerLink", "/login", "class", "nav-link", 4, "ngIf"], ["routerLink", "/viewAnimal", 1, "nav-link"], ["routerLink", "/logout", "class", "nav-link", 4, "ngIf"], ["routerLink", "/", 1, "nav-link"], ["routerLink", "/createEmployee", 1, "nav-link"], ["routerLink", "/addAnimal", 1, "nav-link"], ["routerLink", "/login", 1, "nav-link"], ["routerLink", "/logout", 1, "nav-link"]], template: function MenuActionComponent_Template(rf, ctx) { if (rf & 1) {
+MenuActionComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: MenuActionComponent, selectors: [["app-menu-action"]], decls: 19, vars: 5, consts: [[1, "navbar", "navbar-expand-md", "navbar-dark", "bg-dark"], ["href", "", 1, "navbar-brand"], [1, "navbar-nav"], ["routerLink", "/viewEmployee", "class", "nav-link", 4, "ngIf"], ["routerLink", "/createEmployee", "class", "nav-link", 4, "ngIf"], ["routerLink", "/addAnimal", "class", "nav-link", 4, "ngIf"], ["routerLink", "/login", "class", "nav-link", 4, "ngIf"], ["routerLink", "/viewAnimal", 1, "nav-link"], ["routerLink", "/logout", "class", "nav-link", 4, "ngIf"], ["routerLink", "/viewEmployee", 1, "nav-link"], ["routerLink", "/createEmployee", 1, "nav-link"], ["routerLink", "/addAnimal", 1, "nav-link"], ["routerLink", "/login", 1, "nav-link"], ["routerLink", "/logout", 1, "nav-link"]], template: function MenuActionComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "header");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "nav", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div");

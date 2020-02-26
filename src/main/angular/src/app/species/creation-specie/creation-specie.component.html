@@ -1,0 +1,19 @@
+<div class="col-md-6">
+  <h2 class="text-center">Add Species Animal Aquarium</h2>
+  <form [formGroup]="addSpecieForm">
+    <div class="form-group">
+      <label>
+        Add Species (Fish):
+        <input type="text" formControlName="nameSpecies"  placeholder="Species Fish" name="nameSpecies" class="form-control">
+      </label>
+    </div>
+
+    <div class="form-group">
+      <label>
+        Add Description:
+        <input type="text" formControlName="description" placeholder="Description" name="description" class="form-control">
+      </label>
+    </div>
+    <button class="btn btn-success" (click)="save($event)" [disabled]="!addSpecieForm.valid">Save</button>
+  </form>
+</div>

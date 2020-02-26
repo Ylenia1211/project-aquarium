@@ -1,0 +1,5 @@
+<ul>
+  <li *ngFor=" let fishSpecie of species">
+    <app-specie [specie]="fishSpecie" (onDelete)="refresh($event)"></app-specie>
+  </li>
+</ul>

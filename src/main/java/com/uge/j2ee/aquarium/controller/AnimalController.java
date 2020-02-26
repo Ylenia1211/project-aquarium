@@ -2,18 +2,14 @@ package com.uge.j2ee.aquarium.controller;
 
 
 import com.uge.j2ee.aquarium.model.Animal;
+import com.uge.j2ee.aquarium.model.AnimalSpecies;
 import com.uge.j2ee.aquarium.service.AnimalService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -24,6 +20,37 @@ public class AnimalController {
     @GetMapping("/animal")
     public Iterable<Animal> getAll() {
         return animalService.getAll();
+    }
+
+    @GetMapping("/animal/species")
+    public List<String> getAllSpecies() {
+        return animalService.getAllSpecies();
+    }
+
+    @PostMapping("/species")
+    @ResponseBody
+    public AnimalSpecies addSpecies(@RequestBody AnimalSpecies animal) {
+        return animalService.saveSpecie(animal);
+    }
+    @GetMapping("/species/{id}")
+    public AnimalSpecies getByIdSpecie(@PathVariable String id) {
+        return animalService.getByIdSpecie(id);
+    }
+    @GetMapping("/species")
+    public Iterable<AnimalSpecies> getAllS() {
+        return animalService.getAllS();
+    }
+    @DeleteMapping("/species/{id}")
+    public AnimalSpecies deleteSpecie(@PathVariable String id) {
+        return animalService.removeSpecie(animalService.getByIdSpecie(id));
+    }
+
+
+
+
+    @GetMapping("/animal/name")
+    public List<String> getAllName() {
+        return animalService.getAllName();
     }
 
     @GetMapping("/animal/{id}")
@@ -50,5 +77,7 @@ public class AnimalController {
     public Animal deleteAnimal(@PathVariable String id) {
         return animalService.remove(animalService.getById(id));
     }
+
+
 
 }

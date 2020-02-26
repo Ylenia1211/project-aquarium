@@ -3,6 +3,8 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {Animal} from "../../Animal";
 import {AnimalServiceService} from "../../animal-service.service";
 import {Router} from "@angular/router";
+import {Specie} from "../../species/Specie";
+import {SpecieService} from "../../species/specie.service";
 
 @Component({
   selector: 'app-creation-animal',
@@ -15,12 +17,25 @@ export class CreationAnimalComponent implements OnInit {
     species: new FormControl("", Validators.required)
   });
   @Output()
-  onSave: EventEmitter<Animal> = new EventEmitter<Animal>()
+  onSave: EventEmitter<Animal> = new EventEmitter<Animal>();
 
-  constructor(private animalService: AnimalServiceService,  private router: Router) {
+
+  speciesType:Array<Specie>
+
+
+  constructor(private animalService: AnimalServiceService,
+              private specieService: SpecieService,
+              private router: Router) {
   }
 
   ngOnInit() {
+    this.callSpecies(null)
+  }
+
+  callSpecies($event: Specie) {
+    this.specieService.getAllSpecies().subscribe(
+      data => this.speciesType = data,
+      error => console.log(error))
   }
 
   save($event: Event) {

@@ -1,9 +1,6 @@
 package com.uge.j2ee.aquarium.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
@@ -23,10 +20,11 @@ public class Animal{
     private String dietaryRegime;
     private short threatLevel;
 
+
     public Animal() {
     }
 
-    public Animal(Long id,String name, String species, String sex, String feature,  boolean  extinction, Date arrivalDate,  Date departureDate,  Integer lifeExpectancy, String dietaryRegime,  short threatLevel ) {
+    public Animal(Long id, String name, String species, String sex, String feature, boolean  extinction, Date arrivalDate, Date departureDate, Integer lifeExpectancy, String dietaryRegime, short threatLevel ) {
         super();
          this.id = id;
          this.name = name;
@@ -45,6 +43,7 @@ public class Animal{
         this.name = name;
         this.species = species;
     }
+
 
     public Long getId() {
         return id;

@@ -1,16 +1,21 @@
 package com.uge.j2ee.aquarium.service;
 
 import com.uge.j2ee.aquarium.model.Animal;
+import com.uge.j2ee.aquarium.model.AnimalSpecies;
+import com.uge.j2ee.aquarium.repository.AnimalDetailRepository;
 import com.uge.j2ee.aquarium.repository.AnimalRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class AnimalService {
 
     @Autowired
     AnimalRepository animalRepo;
-
+    @Autowired
+    AnimalDetailRepository animalRepoD;
     public Iterable<Animal> getAll() {
         return animalRepo.findAll();
     }
@@ -29,5 +34,25 @@ public class AnimalService {
     public Animal remove(Animal animal) {
         animalRepo.delete(animal);
         return animal;
+    }
+
+    public List<String> getAllSpecies() {
+        return animalRepoD.getAllSpecies();
+    }
+    public Iterable<AnimalSpecies> getAllS() {
+        return animalRepoD.findAll();
+    }
+    public AnimalSpecies saveSpecie(AnimalSpecies species) {
+        return animalRepoD.save(species);
+    }
+    public AnimalSpecies getByIdSpecie(String id) {
+        return animalRepoD.findById(Long.parseLong(id)).get();
+    }
+    public AnimalSpecies removeSpecie(AnimalSpecies animal) {
+        animalRepoD.delete(animal);
+        return animal;
+    }
+    public List<String> getAllName() {
+        return  animalRepo.getAllName();
     }
 }

@@ -24,11 +24,23 @@
       </label>
     </div>
 
-    <div class="form-group">
+<!-- <div class="form-group">
       <label>
         Add Species:
+
         <input type="text" formControlName="species" placeholder="Species" name="species" class="form-control">
       </label>
+    </div>
+
+-->
+
+    <div class="column small-12 large-2">
+      <label class="sbw_light">Add Species: </label><br />
+      <select formControlName="species">
+        <option *ngFor="let type of speciesType"
+        [value]="type">{{type}}
+        </option>
+      </select>
     </div>
     <button class="btn btn-success" (click)="save($event)" [disabled]="!addAnimalForm.valid">Save</button>
   </form>

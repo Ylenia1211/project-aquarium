@@ -14,6 +14,9 @@ import { MenuActionComponent } from './menu-action/menu-action.component';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import { EmployeesComponent } from './employees/employees.component';
+import { SpeciesComponent } from './species/species.component';
+import { CreationSpecieComponent } from './species/creation-specie/creation-specie.component';
+import { SpecieComponent } from './species/specie/specie.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,10 @@ import { EmployeesComponent } from './employees/employees.component';
     MenuActionComponent,
     LoginComponent,
     LogoutComponent,
-    EmployeesComponent
+    EmployeesComponent,
+    SpeciesComponent,
+    CreationSpecieComponent,
+    SpecieComponent
   ],
   imports: [
     BrowserModule,

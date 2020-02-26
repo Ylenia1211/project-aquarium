@@ -22,4 +22,5 @@ export class AnimalServiceService {
     return this.http.delete("/animal/" + animal.id)
   }
 
+
 }

@@ -8,6 +8,8 @@ import {AnimalComponent} from "./animals/animal/animal.component";
 import {CreationAnimalComponent} from "./animals/creation-animal/creation-animal.component";
 import {AnimalsComponent} from "./animals/animals.component";
 import {EmployeesComponent} from "./employees/employees.component";
+import {SpeciesComponent} from "./species/species.component";
+import {CreationSpecieComponent} from "./species/creation-specie/creation-specie.component";
 
 
 const routes: Routes = [
@@ -17,6 +19,8 @@ const routes: Routes = [
   { path: 'addAnimal', component: CreationAnimalComponent },
   { path: 'login', component: LoginComponent },
   { path: 'logout', component: LogoutComponent },
+  { path:'viewSpecies', component: SpeciesComponent},
+  { path:'addSpecies', component: CreationSpecieComponent},
 ];
 
 @NgModule({

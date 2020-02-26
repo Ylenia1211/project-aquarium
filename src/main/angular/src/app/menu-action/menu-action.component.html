@@ -7,8 +7,9 @@
       <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/createEmployee" class="nav-link">Add Employee Aquarium</a></li>
       <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/addAnimal" class="nav-link">Add Fish Aquarium</a></li>
       <li><a *ngIf="!loginService.isUserLoggedIn()" routerLink="/login" class="nav-link">Login</a></li>
-      <li><a  routerLink="/viewAnimal" class="nav-link">View Fish Aquarium</a></li>
-
+      <li><a  routerLink="/viewAnimal" class="nav-link">View Fish</a></li>
+      <li><a  routerLink="/viewSpecies" class="nav-link">View Species Fish</a></li>
+      <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/addSpecies" class="nav-link">Add Species</a></li>
       <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/logout" class="nav-link">Logout</a></li>
 
     </ul>

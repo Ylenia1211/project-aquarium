@@ -1,0 +1,19 @@
+<div class="col-md-6">
+  <h2 class="text-center">Add Employee Aquarium</h2>
+  <form [formGroup]="addEmployeeForm">
+    <div class="form-group">
+      <label>
+        Add name:
+        <input type="text" formControlName="name"  placeholder="Name new employee" name="name" class="form-control">
+      </label>
+    </div>
+
+    <div class="form-group">
+      <label>
+        Add Role:
+        <input type="text" formControlName="designation" placeholder="Role" name="designation" class="form-control">
+      </label>
+    </div>
+    <button class="btn btn-success" (click)="save($event)" [disabled]="!addEmployeeForm.valid">Save</button>
+  </form>
+</div>

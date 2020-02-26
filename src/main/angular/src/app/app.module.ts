@@ -8,11 +8,12 @@ import { CreationAnimalComponent } from './animals/creation-animal/creation-anim
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { AnimalsComponent } from './animals/animals.component';
 import {HttpClientModule} from "@angular/common/http";
-import { EmployeeComponent } from './employee/employee.component';
-import { CreationEmployeeComponent } from './creation-employee/creation-employee.component';
+import { EmployeeComponent } from './employees/employee/employee.component';
+import { CreationEmployeeComponent } from './employees/creation-employee/creation-employee.component';
 import { MenuActionComponent } from './menu-action/menu-action.component';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
+import { EmployeesComponent } from './employees/employees.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { LogoutComponent } from './logout/logout.component';
     CreationEmployeeComponent,
     MenuActionComponent,
     LoginComponent,
-    LogoutComponent
+    LogoutComponent,
+    EmployeesComponent
   ],
   imports: [
     BrowserModule,

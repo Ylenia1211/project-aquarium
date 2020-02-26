@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Employee} from "./Employee";
+import {Observable} from "rxjs";
+import {Animal} from "./Animal";
 
 @Injectable({
   providedIn: 'root'
@@ -10,14 +12,16 @@ export class EmployeeService {
   constructor(private http: HttpClient) {
   }
 
-  getEmployees() {
-    return this.http.get<Employee[]>('/employees');
-  }
-  public deleteEmployee(employee: Employee) {
-    return this.http.delete<Employee>("/employees" + "/"+ employee.idEmployee);
+  getAll(): Observable<any> {
+    return this.http.get("/employee")
   }
 
-  public createEmployee(employee) {
-    return this.http.post<Employee>("/employees", employee);
+  save(employee: Employee): Observable<any> {
+    return this.http.post("/employee", employee)
   }
+
+  delete(employee: Employee): Observable<any> {
+    return this.http.delete("/employee/" + employee.idEmployee)
+  }
+
 }

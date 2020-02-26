@@ -1,0 +1,5 @@
+<ul>
+  <li *ngFor=" let employee of employees">
+    <app-employee [employee]="employee" (onDelete)="refresh($event)"></app-employee>
+  </li>
+</ul>

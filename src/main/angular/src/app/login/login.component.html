@@ -1,1 +1,12 @@
-<p>login works!</p>
+<!-- add dialogbox login -->
+<div class="container">
+  <div>
+    UserName : <label>
+    <input type="text" name="username" [(ngModel)]="username">
+  </label>
+    Password : <label>
+    <input type="password" name="password" [(ngModel)]="password">
+  </label>
+  </div>
+  <button (click)=checkLogin() class="btn btn-success"> Login </button>
+</div>

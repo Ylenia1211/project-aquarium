@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {AuthenticationService} from "../authentication.service";
 
 @Component({
   selector: 'app-menu-action',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuActionComponent implements OnInit {
 
-  constructor() { }
+  constructor(public loginService:AuthenticationService) { }
 
   ngOnInit(): void {
   }

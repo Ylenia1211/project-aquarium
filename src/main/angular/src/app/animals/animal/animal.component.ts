@@ -12,7 +12,7 @@ export class AnimalComponent implements OnInit {
   @Input()
   animal: Animal
   @Output()
-  onDelete: EventEmitter<Animal> = new EventEmitter<Animal>()
+  onDelete: EventEmitter<Animal> = new EventEmitter<Animal>();
 
   constructor(private animalService: AnimalServiceService) {
   }

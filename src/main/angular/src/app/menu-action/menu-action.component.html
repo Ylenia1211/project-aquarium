@@ -3,10 +3,14 @@
     <div><a href="" class="navbar-brand">Aquarium App</a></div>
 
     <ul class="navbar-nav">
-      <li><a  routerLink="/" class="nav-link">View Employees Aquarium</a></li>
-      <li><a  routerLink="/createEmployee" class="nav-link">Add Employee Aquarium</a></li>
-      <li><a  routerLink="/login" class="nav-link">Login</a></li>
-      <li><a  routerLink="/logout" class="nav-link">Logout</a></li>
+      <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/" class="nav-link">View Employees Aquarium</a></li>
+      <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/createEmployee" class="nav-link">Add Employee Aquarium</a></li>
+      <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/addAnimal" class="nav-link">Add Fish Aquarium</a></li>
+      <li><a *ngIf="!loginService.isUserLoggedIn()" routerLink="/login" class="nav-link">Login</a></li>
+      <li><a  routerLink="/viewAnimal" class="nav-link">View Fish Aquarium</a></li>
+
+      <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/logout" class="nav-link">Logout</a></li>
+
     </ul>
   </nav>
 

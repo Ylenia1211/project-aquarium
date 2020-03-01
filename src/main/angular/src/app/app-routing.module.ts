@@ -10,6 +10,8 @@ import {AnimalsComponent} from "./animals/animals.component";
 import {EmployeesComponent} from "./employees/employees.component";
 import {SpeciesComponent} from "./species/species.component";
 import {CreationSpecieComponent} from "./species/creation-specie/creation-specie.component";
+import {CreationPoolComponent} from "./pools/creation-pool/creation-pool.component";
+import {PoolsComponent} from "./pools/pools.component";
 
 
 const routes: Routes = [
@@ -21,6 +23,8 @@ const routes: Routes = [
   { path: 'logout', component: LogoutComponent },
   { path:'viewSpecies', component: SpeciesComponent},
   { path:'addSpecies', component: CreationSpecieComponent},
+  { path:'createPool', component: CreationPoolComponent},
+  { path:'viewPool', component: PoolsComponent},
 ];
 
 @NgModule({

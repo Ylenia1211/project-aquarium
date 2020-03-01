@@ -1,15 +1,22 @@
 package com.uge.j2ee.aquarium.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIdentityReference;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
+import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "idEmployee", scope = Employee.class)
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(unique = true,nullable = false)
     private Long idEmployee;
     private String name;
     private String surname;
@@ -18,9 +25,26 @@ public class Employee {
     private String designation;
     //TO DO: COMPLETE ATTRIBUTE
 
+    @OneToMany(mappedBy = "responsable")
+    @JsonIdentityReference
+    private Set<Pool> poolResponsable = new HashSet<>();
+   // @OneToOne(fetch = FetchType.LAZY)
+    //@JoinColumn(name="idPool", nullable=true)
+   // private Pool poolResponsable;
+
+
+    public Set<Pool> getPoolResponsable() {
+        return poolResponsable;
+    }
+
+    public void setPoolResponsable(Set<Pool> poolResponsable) {
+        this.poolResponsable = poolResponsable;
+    }
 
     public Employee() {
     }
+
+
 
     public Long getIdEmployee() {
         return idEmployee;

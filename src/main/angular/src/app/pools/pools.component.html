@@ -1,0 +1,6 @@
+<p>pools works!</p>
+<ul>
+  <li *ngFor=" let pool of pools">
+    <app-pool [pool]="pool" (onDelete)="refresh($event)"></app-pool>
+  </li>
+</ul>

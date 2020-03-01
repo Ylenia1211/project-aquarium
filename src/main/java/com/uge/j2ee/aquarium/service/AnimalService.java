@@ -42,7 +42,9 @@ public class AnimalService {
     public List<String> getAllSpecies() {
         return animalRepoD.getAllSpecies();
     }
-
+    /*public  List<Animal> getAllAnimalBySpecies(){
+        return animalRepoD.getAllAnimalBySpecies();
+    }*/
     public Iterable<AnimalSpecies> getAllS() {
         return animalRepoD.findAll();
     }

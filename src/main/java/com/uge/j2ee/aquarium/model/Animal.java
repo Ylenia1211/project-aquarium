@@ -1,13 +1,15 @@
 package com.uge.j2ee.aquarium.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
 @Entity
-public class Animal{
+public class Animal implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(unique = true,nullable = false)
     private Long id;
     private String name;
     private String species;

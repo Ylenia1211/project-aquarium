@@ -1,0 +1,28 @@
+<div class="col-md-6">
+  <h2 class="text-center">Add Name Pool</h2>
+  <form [formGroup]="addPoolForm">
+    <div class="form-group">
+      <label>
+        Add Name Pool (Fish):
+        <input type="text" formControlName="namePool"  placeholder="Name Pool" name="namePool" class="form-control">
+      </label>
+    </div>
+
+    <div class="form-group">
+      <label>
+        Add State:
+        <input type="text" formControlName="state"  placeholder="State Pool" name="state" class="form-control">
+      </label>
+    </div>
+
+ <div class="column small-12 large-2">
+    <label class="sbw_light">Employee Responsable: </label><br />
+    <select  formControlName="responsable">
+      <option *ngFor="let resp of responsable_employees"
+              [value]="resp.idEmployee">{{resp.name}}
+      </option>
+    </select>
+  </div>
+<button class="btn btn-success" (click)="save($event)" [disabled]="!addPoolForm.valid">Save</button>
+</form>
+</div>

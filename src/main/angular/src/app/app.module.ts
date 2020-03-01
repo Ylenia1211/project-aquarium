@@ -17,6 +17,9 @@ import { EmployeesComponent } from './employees/employees.component';
 import { SpeciesComponent } from './species/species.component';
 import { CreationSpecieComponent } from './species/creation-specie/creation-specie.component';
 import { SpecieComponent } from './species/specie/specie.component';
+import { PoolsComponent } from './pools/pools.component';
+import { PoolComponent } from './pools/pool/pool.component';
+import { CreationPoolComponent } from './pools/creation-pool/creation-pool.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,10 @@ import { SpecieComponent } from './species/specie/specie.component';
     EmployeesComponent,
     SpeciesComponent,
     CreationSpecieComponent,
-    SpecieComponent
+    SpecieComponent,
+    PoolsComponent,
+    PoolComponent,
+    CreationPoolComponent
   ],
   imports: [
     BrowserModule,

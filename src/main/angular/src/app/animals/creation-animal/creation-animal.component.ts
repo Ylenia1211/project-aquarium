@@ -14,13 +14,15 @@ import {SpecieService} from "../../species/specie.service";
 export class CreationAnimalComponent implements OnInit {
     addAnimalForm = new FormGroup({
     name: new FormControl("", Validators.required),
-    species: new FormControl("", Validators.required)
+    species: new FormControl("", Validators.required),
+      sex: new FormControl("", Validators.required)
   });
   @Output()
   onSave: EventEmitter<Animal> = new EventEmitter<Animal>();
 
 
   speciesType:Array<Specie>
+  sexType: Array<String>  = ["FEMALE","MALE", "NONE"];
 
 
   constructor(private animalService: AnimalServiceService,

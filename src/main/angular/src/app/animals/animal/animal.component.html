@@ -5,12 +5,14 @@
     <tr>
       <th>Name</th>
       <th>Species</th>
+      <th>Sex</th>
     </tr>
     </thead>
     <tbody>
     <tr>
       <td> <b>{{animal.name.toUpperCase()}}</b></td>
       <td> {{animal.species}}</td>
+      <td> {{animal.sex}}</td>
       <td> <button class="btn btn-danger" *ngIf="loginService.isUserLoggedIn()" (click)="delete()"> Delete </button></td>
     </tr>
     </tbody>

@@ -42,6 +42,15 @@
         </option>
       </select>
     </div>
+
+    <div class="column small-12 large-2">
+      <label class="sbw_light">Sex: </label><br />
+      <select formControlName="sex">
+        <option *ngFor="let type of sexType"
+                [value]="type">{{type}}
+        </option>
+      </select>
+    </div>
     <button class="btn btn-success" (click)="save($event)" [disabled]="!addAnimalForm.valid">Save</button>
   </form>
 </div>

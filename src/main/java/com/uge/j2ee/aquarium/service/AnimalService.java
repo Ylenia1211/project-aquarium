@@ -16,9 +16,11 @@ public class AnimalService {
     AnimalRepository animalRepo;
     @Autowired
     AnimalDetailRepository animalRepoD;
+
     public Iterable<Animal> getAll() {
         return animalRepo.findAll();
     }
+
     public Animal save(Animal animal) {
         return animalRepo.save(animal);
     }
@@ -36,15 +38,19 @@ public class AnimalService {
         return animal;
     }
 
+
     public List<String> getAllSpecies() {
         return animalRepoD.getAllSpecies();
     }
+
     public Iterable<AnimalSpecies> getAllS() {
         return animalRepoD.findAll();
     }
+
     public AnimalSpecies saveSpecie(AnimalSpecies species) {
         return animalRepoD.save(species);
     }
+
     public AnimalSpecies getByIdSpecie(String id) {
         return animalRepoD.findById(Long.parseLong(id)).get();
     }

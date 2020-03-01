@@ -28,6 +28,11 @@ public class Pool{
     @JsonIdentityReference
     private Employee responsable;
 
+    @ManyToOne
+    @JoinColumn(name ="sector_pool_id")
+    @JsonIdentityReference
+    private Sector poolSector;
+
     private String volume; //volume of water
     private String state; //propre o sale
 
@@ -45,6 +50,8 @@ public class Pool{
       */
     private String quantityFood;
     //add Activity
+
+
 
     public Pool() {
     }
@@ -78,6 +85,14 @@ public class Pool{
 
     public void setNamePool(String namePool) {
         this.namePool = namePool;
+    }
+
+    public Sector getPoolSector() {
+        return poolSector;
+    }
+
+    public void setPoolSector(Sector poolSector) {
+        this.poolSector = poolSector;
     }
 
 

@@ -23,7 +23,6 @@ public class Employee implements Serializable{
     private String numSecSocial;
     private Date birthday;
     private String designation;
-    //TO DO: COMPLETE ATTRIBUTE
 
     @OneToMany(mappedBy = "responsable")
     @JsonIdentityReference

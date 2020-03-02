@@ -3,23 +3,28 @@
   <form [formGroup]="addPoolForm">
     <div class="form-group">
       <label>
-        Add Name Pool (Fish):
+        Name new Pool:
         <input type="text" formControlName="namePool"  placeholder="Name Pool" name="namePool" class="form-control">
       </label>
     </div>
 
-    <div class="form-group">
-      <label>
-        Add State:
-        <input type="text" formControlName="state"  placeholder="State Pool" name="state" class="form-control">
-      </label>
+
+    <div class="column small-12 large-2">
+      <label class="sbw_light">State: </label><br />
+      <select formControlName="state">
+        <option *ngFor="let type of stateType"
+                [value]="type">{{type}}
+        </option>
+      </select>
     </div>
 
-    <div class="form-group">
-      <label>
-        Add Volume:
-        <input type="text" formControlName="volume"  placeholder="Volume Pool" name="volume" class="form-control">
-      </label>
+    <div class="column small-12 large-2">
+      <label class="sbw_light">Capacity Max: </label><br />
+      <select formControlName="volume">
+        <option *ngFor="let type of volumeType"
+                [value]="type">{{type}}
+        </option>
+      </select>
     </div>
 
  <div class="column small-12 large-2">

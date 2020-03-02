@@ -8,6 +8,7 @@ import {PoolService} from "../pool.service";
 import {Sector} from "../../sectors/Sector";
 import {SectorService} from "../../sectors/sector.service";
 
+
 @Component({
   selector: 'app-creation-pool',
   templateUrl: './creation-pool.component.html',
@@ -24,7 +25,8 @@ export class CreationPoolComponent implements OnInit {
   });
   @Output()
   onSave: EventEmitter<Pool> = new EventEmitter<Pool>();
-
+  stateType: Array<String>  = ["CLEAN","DIRTY"];
+  volumeType: Array<Number> = [5,10,20,30,40,50]; //capacity 5 to 50
   responsable_employees: Array<Employee>;
   sectors: Array<Sector>;
   private tmp: number;

@@ -35,7 +35,7 @@ public class Pool implements Serializable{
 
 
 
-    private String volume; //volume of water
+    private Integer volume; //volume of water
     private String state; //propre o sale
 
     public Employee getResponsable() {
@@ -58,7 +58,7 @@ public class Pool implements Serializable{
 
 
 
-    public Pool(Long id, String name, String state, Employee responsable, String volume, String quantityFood ) {
+    public Pool(Long id, String name, String state, Employee responsable, Integer volume, String quantityFood ) {
         super();
         this.idPool = id;
         this.namePool = name;
@@ -107,11 +107,11 @@ public class Pool implements Serializable{
     }
 
 
-    public String getVolume() {
+    public Integer getVolume() {
         return volume;
     }
 
-    public void setVolume(String volume) {
+    public void setVolume(Integer volume) {
         this.volume = volume;
     }
 

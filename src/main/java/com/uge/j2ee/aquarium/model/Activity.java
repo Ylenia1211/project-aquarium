@@ -37,6 +37,14 @@ public class Activity {
     public Activity() {
     }
 
+    public Activity(Long id, String nameActivity, String state) {
+        super();
+        this.id = id;
+        this.nameActivity = nameActivity;
+        this.state = state;
+
+    }
+
     public Long getId() {
         return id;
     }

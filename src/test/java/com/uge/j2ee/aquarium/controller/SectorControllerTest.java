@@ -3,13 +3,16 @@ import com.uge.j2ee.aquarium.model.Sector;
 import com.uge.j2ee.aquarium.service.SectorService;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import java.net.URISyntaxException;
 import java.util.ArrayList;
@@ -17,7 +20,8 @@ import java.util.HashMap;
 import java.util.List;
 
 import static org.junit.Assert.*;
-
+@RunWith(SpringRunner.class)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class SectorControllerTest {
     @LocalServerPort
     private int port = 8080;

@@ -15,7 +15,7 @@
 -->
 
 <div class="col-md-6">
-  <h2 class="text-center">Add Fish Aquarium</h2>
+  <h2 class="text-center">Fish Aquarium</h2>
   <form [formGroup]="addAnimalForm">
     <div class="form-group">
       <label>
@@ -51,6 +51,62 @@
         </option>
       </select>
     </div>
+
+    <div class="form-group">
+      <label>
+       Feature:
+        <input type="text" formControlName="feature"  placeholder="Feature Fish" name="feature" class="form-control">
+      </label>
+    </div>
+
+    <div class="form-group">
+      <label>
+        Extinction:
+        <input type="checkbox" formControlName="extinction"  placeholder=" extinction Fish" name=" extinction" class="form-control">
+      </label>
+    </div>
+
+    <div class="form-group">
+      <label>
+        Arrival Date:
+        <input type="date" formControlName="arrivalDate"  placeholder="arrivalDate" name="arrivalDate" class="form-control">
+      </label>
+    </div>
+
+    <div class="form-group">
+      <label>
+        Departure Date:
+        <input type="date" formControlName="departureDate"  placeholder="departureDate" name="departureDate" class="form-control">
+      </label>
+    </div>
+
+    <div class="column small-12 large-2">
+      <label class="sbw_light">Life Expectancy: </label><br />
+      <select formControlName="lifeExpectancy">
+        <option *ngFor="let type of lifeType"
+                [value]="type">{{type}}
+        </option>
+      </select>
+    </div>
+
+    <div class="column small-12 large-2">
+      <label class="sbw_light">Dietary Regime: </label><br />
+      <select formControlName="dietaryRegime">
+        <option *ngFor="let type of foodType"
+                [value]="type">{{type}}
+        </option>
+      </select>
+    </div>
+
+    <div class="column small-12 large-2">
+      <label class="sbw_light"> Threat Level: </label><br />
+      <select formControlName="threatLevel">
+        <option *ngFor="let type of levelType"
+                [value]="type">{{type}}
+        </option>
+      </select>
+    </div>
+
     <button class="btn btn-success" (click)="save($event)" [disabled]="!addAnimalForm.valid">Save</button>
   </form>
 </div>

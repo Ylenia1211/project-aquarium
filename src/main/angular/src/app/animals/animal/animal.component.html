@@ -6,6 +6,14 @@
       <th>Name</th>
       <th>Species</th>
       <th>Sex</th>
+      <th>Feature</th>
+      <th>Extinction</th>
+      <th>Arrival</th>
+      <th>Departure</th>
+      <th>Life</th>
+      <th>Regime Alim.</th>
+      <th>Threat level</th>
+
     </tr>
     </thead>
     <tbody>
@@ -13,6 +21,13 @@
       <td> <b>{{animal.name.toUpperCase()}}</b></td>
       <td> {{animal.species}}</td>
       <td> {{animal.sex}}</td>
+      <td> {{animal.feature}}</td>
+      <td> {{animal.extinction}}</td>
+      <td> {{animal.arrivalDate}}</td>
+      <td> {{animal.departureDate}}</td>
+      <td> {{animal.lifeExpectancy}}</td>
+      <td> {{animal.dietaryRegime}}</td>
+      <td> {{animal.threatLevel}}</td>
       <td> <button class="btn btn-danger" *ngIf="loginService.isUserLoggedIn()" (click)="delete()"> Delete </button></td>
     </tr>
     </tbody>

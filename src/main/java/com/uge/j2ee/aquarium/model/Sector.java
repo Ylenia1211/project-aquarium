@@ -25,6 +25,12 @@ public class Sector implements Serializable {
 
     public Sector() {
     }
+    public Sector(Long id, String name, String localitation) {
+        super();
+        this.id = id;
+        this.name = name;
+        this.localitation = localitation;
+    }
     public Sector(Long id, String name, String localitation, Set<Pool> sectorPools) {
         super();
         this.id = id;

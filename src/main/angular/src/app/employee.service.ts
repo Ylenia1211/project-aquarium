@@ -16,10 +16,12 @@ export class EmployeeService {
     return this.http.get("/employee")
   }
 
+  /*save(employee: Employee, idPool: number): Observable<any> {
+    return this.http.post("/employee/pool/"+idPool, employee)
+  }*/
   save(employee: Employee): Observable<any> {
     return this.http.post("/employee", employee)
   }
-
   delete(employee: Employee): Observable<any> {
     return this.http.delete("/employee/" + employee.idEmployee)
   }

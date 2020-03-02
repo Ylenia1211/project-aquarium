@@ -3,13 +3,28 @@
     <thead>
     <tr>
       <th>Name</th>
+      <th>Surname</th>
+      <th>Birthday</th>
+      <th>Num.sec.Social</th>
       <th>Role</th>
+      <th>Pool</th>
     </tr>
     </thead>
     <tbody>
     <tr>
       <td> <b>{{employee.name.toUpperCase()}}</b></td>
+      <td> {{employee.surname}}</td>
+      <td> {{employee.birthday}}</td>
+      <td> {{employee.numSecSocial}}</td>
       <td> {{employee.designation}}</td>
+      <td>
+      <ul>
+          <li *ngFor=" let pool of employee.poolResponsable">
+            {{pool.namePool}}
+          </li>
+        </ul>
+       <!-- {{employee.poolResponsable.namePool}}-->
+      </td>
       <td> <button class="btn btn-danger" *ngIf="loginService.isUserLoggedIn()" (click)="delete()"> Delete </button></td>
     </tr>
     </tbody>

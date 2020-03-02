@@ -3,6 +3,9 @@ import {EmployeeService} from "../../employee.service";
 import {Employee} from "../../Employee";
 import {Router} from "@angular/router";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {Pool} from "../../Pool";
+import {PoolService} from "../../pools/pool.service";
+import {Sector} from "../../sectors/Sector";
 
 
 @Component({
@@ -14,19 +17,29 @@ export class CreationEmployeeComponent implements OnInit {
 
   addEmployeeForm = new FormGroup({
     name: new FormControl("", Validators.required),
-    designation: new FormControl("", Validators.required)
+    designation: new FormControl("", Validators.required),
+    surname:new FormControl("", Validators.required),
+    numSecSocial: new FormControl("", Validators.required),
+   // poolResponsable: new FormControl("", Validators.required),
+    birthday: new FormControl("", Validators.required)
+
   });
   @Output()
   onSave: EventEmitter<Employee> = new EventEmitter<Employee>()
-
-  constructor(private employeeService: EmployeeService,  private router: Router) {
+  designationType: Array<String>  = ["WORKER","RESPONSABLE"];
+  pools: Array<Pool>;
+  constructor(private employeeService: EmployeeService, private poolService:PoolService,  private router: Router) {
   }
 
   ngOnInit() {
+    this.viewPool();
   }
-
-  save($event: Event) {
+  private tmp: number;
+  save($event: Event) {//add path
+   // this.tmp = this.addEmployeeForm.value.poolResponsable;
+  //  delete this.addEmployeeForm.value.poolResponsable;
     this.employeeService.save(this.addEmployeeForm.value).subscribe(
+   // this.employeeService.save(this.addEmployeeForm.value, this.tmp).subscribe(
       data => {
         this.onSave.emit()
         alert("Employee Aquarium created successfully!");
@@ -36,5 +49,16 @@ export class CreationEmployeeComponent implements OnInit {
       error => console.log(error)
     )
   }
+  viewPool(){
+    this.poolService.getAll().subscribe(
+      data => {
+        if(data!=null){
+          this.pools = data;
 
+        }
+
+      },
+      error => console.log(error)
+    )
+  }
 }

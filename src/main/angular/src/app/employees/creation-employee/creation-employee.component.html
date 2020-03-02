@@ -1,19 +1,52 @@
 <div class="col-md-6">
-  <h2 class="text-center">Employee Aquarium</h2>
+  <h2 class="text-center">New Employee Aquarium</h2>
   <form [formGroup]="addEmployeeForm">
     <div class="form-group">
       <label>
-        Add name:
+        Name:
         <input type="text" formControlName="name"  placeholder="Name new employee" name="name" class="form-control">
       </label>
     </div>
 
     <div class="form-group">
       <label>
-        Add Role:
-        <input type="text" formControlName="designation" placeholder="Role" name="designation" class="form-control">
+        Surname:
+        <input type="text" formControlName="surname"  placeholder="Surname new employee" name="surname" class="form-control">
       </label>
     </div>
+
+    <div class="form-group">
+      <label>
+        Num. Sec. Social:
+        <input type="text" formControlName="numSecSocial"  placeholder="add numero sec.sociale" name="numSecSocial" class="form-control">
+      </label>
+    </div>
+
+    <div class="form-group">
+      <label>
+        Birthday:
+        <input type="date" formControlName="birthday"  placeholder="add date born" name="birthday" class="form-control">
+      </label>
+    </div>
+
+  <div class="column small-12 large-2">
+      <label class="sbw_light">Assign Role: </label><br />
+      <select formControlName="designation">
+        <option *ngFor="let type of designationType"
+                [value]="type">{{type}}
+        </option>
+      </select>
+    </div>
+
+   <!-- <div class="column small-12 large-2">
+      <label class="sbw_light">Assign Pool: </label><br />
+      <select  formControlName="poolResponsable">
+        <option *ngFor="let resp of pools"
+                [value]="resp.idPool">{{resp.namePool}}
+        </option>
+      </select>
+    </div>-->
+
     <button class="btn btn-success" (click)="save($event)" [disabled]="!addEmployeeForm.valid">Save</button>
   </form>
 </div>

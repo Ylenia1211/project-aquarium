@@ -12,11 +12,16 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.web.server.LocalServerPort;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpMethod;
 import org.springframework.test.context.junit4.SpringRunner;
+
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 
 @RunWith(SpringRunner.class)
@@ -62,7 +67,39 @@ public class AnimalControllerTest {
         assertEquals(listAnimal.get(1).get("name"), output.getName());
     }
 
-   //TO DO TEST POST, UPDATE, DELETE
+   @Test
+   public void testPostId() throws URISyntaxException {
+       Animal animal = new Animal(1L, "Axolotl", "Tropical");
+       Mockito.when(animalService.save(animal)).thenReturn( new Animal(1L, "Axolotl", "Tropical"));
+       Animal request = this.restTemplate.postForObject("http://localhost:" + port + "/animal", animal,
+               Animal.class);
+       assertEquals("Axolotl", request.getName());
+       assertEquals("Tropical", request.getSpecies());
+       assertNotNull(request.getId());
+   }
 
+    @Test
+    public void testUpdateAnimal() {
+        Animal updateP1 = new Animal(1L, "Axolotl", "Tropical");
+        Mockito.when(animalService.save(updateP1)).thenReturn(new Animal(1L, "Axolotl", "Tropical"));
+        updateP1.setSpecies("Tropical");
+        HttpEntity<Animal> updated = new HttpEntity<Animal>(updateP1);
+        Animal request = this.restTemplate.exchange("http://localhost:" + port + "/animal/1", HttpMethod.PUT,
+                updated, Animal.class).getBody();
+        System.out.println(request);
+        assertEquals(updateP1, request);
+    }
+/*
+    @Test
+    public void testDeleteAnimal() {
+        Animal p1 = new Animal(1L, "Axolotl", "Tropical");
+        Mockito.when(animalService.remove(p1)).thenReturn(p1);
+        Animal response = this.restTemplate
+                .exchange("http://localhost:" + port + "/animal/1", HttpMethod.DELETE, null, Animal.class)
+                .getBody();
+        assertEquals(Long.valueOf(1L), response.getId());
+        assertEquals(p1, response);
+    }
+*/
 
 }

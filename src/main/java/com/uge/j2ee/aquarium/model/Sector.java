@@ -14,6 +14,7 @@ public class Sector {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    private String name;
     private String localitation;
 
     @OneToMany(mappedBy = "poolSector")
@@ -25,6 +26,14 @@ public class Sector {
 
     public Long getId() {
         return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public void setId(Long id) {

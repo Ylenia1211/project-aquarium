@@ -33,6 +33,8 @@ public class Pool{
     @JsonIdentityReference
     private Sector poolSector;
 
+
+
     private String volume; //volume of water
     private String state; //propre o sale
 
@@ -44,17 +46,18 @@ public class Pool{
         this.responsable = responsable;
     }
 
-    /* @ManyToOne
-        @JoinColumn("animal_id", nullable = false)
-        private Animal fish;
-      */
     private String quantityFood;
-    //add Activity
 
-
+    @ManyToOne
+    @JoinColumn(name ="activity_pool_id")
+    @JsonIdentityReference
+    private Activity activity;
 
     public Pool() {
     }
+
+
+
     public Pool(Long id, String name, String state, Employee responsable, String volume, String quantityFood ) {
         super();
         this.idPool = id;
@@ -77,6 +80,14 @@ public class Pool{
 
     public void setIdPool(Long idPool) {
         this.idPool = idPool;
+    }
+
+    public Activity getActivity() {
+        return activity;
+    }
+
+    public void setActivity(Activity activity) {
+        this.activity = activity;
     }
 
     public String getNamePool() {

@@ -76,6 +76,12 @@ public class Pool implements Serializable{
         this.state = state;
         this.responsable= responsable;
     }
+    public Pool(Long id, String name, String state) {
+        super();
+        this.idPool = id;
+        this.namePool = name;
+        this.state = state;
+    }
     public Long getIdPool() {
         return idPool;
     }

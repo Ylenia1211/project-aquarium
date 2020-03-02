@@ -61,7 +61,7 @@ public class ActivityControllerTest {
     public void getById() {
         List<HashMap> listSect = this.restTemplate.getForObject("http://localhost:" + port + "/activity", List.class);
         Activity output = this.restTemplate.getForObject("http://localhost:" + port + "/activity/2", Activity.class);
-        assertEquals(listSect.get(1).get("name"), output.getNameActivity());
+        assertEquals(listSect.get(1).get("nameActivity"), output.getNameActivity());
     }
 
     @Test

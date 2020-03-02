@@ -34,17 +34,16 @@ public class Pool implements Serializable{
     private Sector poolSector;
 
 
+    @OneToMany(mappedBy = "pool", fetch = FetchType.EAGER)
+    @JsonIdentityReference
+    private Set<Animal> fishPool= new HashSet<>();
+
+
 
     private Integer volume; //volume of water
     private String state; //propre o sale
 
-    public Employee getResponsable() {
-        return responsable;
-    }
 
-    public void setResponsable(Employee responsable) {
-        this.responsable = responsable;
-    }
 
     private String quantityFood;
 
@@ -93,6 +92,14 @@ public class Pool implements Serializable{
     public String getNamePool() {
         return namePool;
     }
+    
+    public Employee getResponsable() {
+        return responsable;
+    }
+
+    public void setResponsable(Employee responsable) {
+        this.responsable = responsable;
+    }
 
     public void setNamePool(String namePool) {
         this.namePool = namePool;
@@ -129,5 +136,13 @@ public class Pool implements Serializable{
 
     public void setQuantityFood(String quantityFood) {
         this.quantityFood = quantityFood;
+    }
+
+    public Set<Animal> getFishPool() {
+        return fishPool;
+    }
+
+    public void setFishPool(Set<Animal> fishPool) {
+        this.fishPool = fishPool;
     }
 }

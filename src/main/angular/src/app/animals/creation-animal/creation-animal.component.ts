@@ -5,6 +5,9 @@ import {AnimalServiceService} from "../../animal-service.service";
 import {Router} from "@angular/router";
 import {Specie} from "../../species/Specie";
 import {SpecieService} from "../../species/specie.service";
+import {PoolService} from "../../pools/pool.service";
+import {Employee} from "../../Employee";
+import {Pool} from "../../Pool";
 
 @Component({
   selector: 'app-creation-animal',
@@ -22,7 +25,8 @@ export class CreationAnimalComponent implements OnInit {
     departureDate: new FormControl("", Validators.required),
     lifeExpectancy: new FormControl("", Validators.required),
       dietaryRegime:  new FormControl("", Validators.required),
-      threatLevel:  new FormControl("", Validators.required)
+      threatLevel:  new FormControl("", Validators.required),
+      pool:  new FormControl("", Validators.required)
     });
   @Output()
   onSave: EventEmitter<Animal> = new EventEmitter<Animal>();
@@ -39,11 +43,13 @@ export class CreationAnimalComponent implements OnInit {
 
   constructor(private animalService: AnimalServiceService,
               private specieService: SpecieService,
+              private  poolService: PoolService,
               private router: Router) {
   }
-
+  pools: Array<Pool>;
   ngOnInit() {
     this.callSpecies(null)
+    this.viewPools();
   }
 
   callSpecies($event: Specie) {
@@ -51,13 +57,28 @@ export class CreationAnimalComponent implements OnInit {
       data => this.speciesType = data,
       error => console.log(error))
   }
-
+  private tmp: number;
   save($event: Event) {
-    this.animalService.save(this.addAnimalForm.value).subscribe(
+    this.tmp = this.addAnimalForm.value.pool;
+    delete this.addAnimalForm.value.pool;
+    this.animalService.save(this.addAnimalForm.value, this.tmp).subscribe(
       data => {
         this.onSave.emit()
         alert("Fish added successfully!");
         this.router.navigate(['viewAnimal']);
+
+      },
+      error => console.log(error)
+    )
+  }
+
+  viewPools(){
+    this.poolService.getAll().subscribe(
+      data => {
+        if(data!=null){
+          this.pools = data;
+
+        }
 
       },
       error => console.log(error)

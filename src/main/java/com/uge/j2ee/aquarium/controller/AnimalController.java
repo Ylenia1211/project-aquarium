@@ -3,7 +3,9 @@ package com.uge.j2ee.aquarium.controller;
 
 import com.uge.j2ee.aquarium.model.Animal;
 import com.uge.j2ee.aquarium.model.AnimalSpecies;
+import com.uge.j2ee.aquarium.model.Pool;
 import com.uge.j2ee.aquarium.service.AnimalService;
+import com.uge.j2ee.aquarium.service.PoolService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,6 +18,9 @@ import java.util.Map;
 public class AnimalController {
     @Autowired
     AnimalService animalService;
+
+    @Autowired
+    PoolService poolService;
 
     @GetMapping("/animal")
     public Iterable<Animal> getAll() {
@@ -32,20 +37,21 @@ public class AnimalController {
     public AnimalSpecies addSpecies(@RequestBody AnimalSpecies animal) {
         return animalService.saveSpecie(animal);
     }
+
     @GetMapping("/species/{id}")
     public AnimalSpecies getByIdSpecie(@PathVariable String id) {
         return animalService.getByIdSpecie(id);
     }
+
     @GetMapping("/species")
     public Iterable<AnimalSpecies> getAllS() {
         return animalService.getAllS();
     }
+
     @DeleteMapping("/species/{id}")
     public AnimalSpecies deleteSpecie(@PathVariable String id) {
         return animalService.removeSpecie(animalService.getByIdSpecie(id));
     }
-
-
 
 
     @GetMapping("/animal/name")
@@ -58,9 +64,12 @@ public class AnimalController {
         return animalService.getById(id);
     }
 
-    @PostMapping("/animal")
+    @PostMapping("/animal/pool/{poolId}")
     @ResponseBody
-    public Animal addAnimal(@RequestBody Animal animal) {
+    public Animal addAnimal(@RequestBody Animal animal,  @PathVariable String poolId)
+    {
+        Pool poolRes = poolService.getById(poolId);
+        animal.setPool(poolRes);
         return animalService.save(animal);
     }
 

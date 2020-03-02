@@ -107,6 +107,15 @@
       </select>
     </div>
 
+    <div class="column small-12 large-2">
+      <label class="sbw_light">Assign Pool: </label><br />
+      <select  formControlName="pool">
+        <option *ngFor="let resp of pools"
+                [value]="resp.idPool">{{resp.namePool}}
+        </option>
+      </select>
+    </div>
+
     <button class="btn btn-success" (click)="save($event)" [disabled]="!addAnimalForm.valid">Save</button>
   </form>
 </div>

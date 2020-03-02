@@ -1,3 +1,5 @@
+import {Pool} from "./Pool";
+
 export class Animal {
   id: number
   name: string
@@ -10,7 +12,7 @@ export class Animal {
   lifeExpectancy: number;
   dietaryRegime: number;
   threatLevel: number;
-
+  pool: Pool;
   constructor(id: number, name: string, species: string, sex:string,
               feature:string,
               extinction: boolean,
@@ -18,7 +20,8 @@ export class Animal {
               departureDate: Date,
               lifeExpectancy: number,
               dietaryRegime: number,
-              threatLevel: number)
+              threatLevel: number,
+              pool: Pool)
   {
     this.id = id;
     this.name = name;
@@ -31,5 +34,6 @@ export class Animal {
     this.lifeExpectancy=lifeExpectancy;
     this.dietaryRegime=dietaryRegime;
     this.threatLevel=threatLevel;
+    this.pool = pool;
   }
 }

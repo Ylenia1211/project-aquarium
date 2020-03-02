@@ -13,7 +13,8 @@
       <th>Life</th>
       <th>Regime Alim.</th>
       <th>Threat level</th>
-      <th>Delete Fish</th>
+      <th>Pool</th>
+      <th *ngIf="loginService.isUserLoggedIn()" >Delete Fish</th>
 
     </tr>
     </thead>
@@ -29,6 +30,7 @@
       <td> {{animal.lifeExpectancy}}</td>
       <td> {{animal.dietaryRegime}}</td>
       <td> {{animal.threatLevel}}</td>
+      <td> {{animal.pool.namePool}}</td>
       <td> <button class="btn btn-danger" *ngIf="loginService.isUserLoggedIn()" (click)="delete()"> Delete </button></td>
     </tr>
     </tbody>

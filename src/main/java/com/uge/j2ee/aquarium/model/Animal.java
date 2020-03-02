@@ -1,5 +1,7 @@
 package com.uge.j2ee.aquarium.model;
 
+import com.fasterxml.jackson.annotation.JsonIdentityReference;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
@@ -22,11 +24,23 @@ public class Animal implements Serializable {
     private String dietaryRegime;
     private short threatLevel;
 
+    @ManyToOne
+    @JoinColumn(name ="pool_animal_id")
+    @JsonIdentityReference
+    private Pool pool;
 
     public Animal() {
     }
 
-    public Animal(Long id, String name, String species, String sex, String feature, boolean  extinction, Date arrivalDate, Date departureDate, Integer lifeExpectancy, String dietaryRegime, short threatLevel ) {
+    public Pool getPool() {
+        return pool;
+    }
+
+    public void setPool(Pool pool) {
+        this.pool = pool;
+    }
+
+    public Animal(Long id, String name, String species, String sex, String feature, boolean  extinction, Date arrivalDate, Date departureDate, Integer lifeExpectancy, String dietaryRegime, short threatLevel, Pool pool ) {
         super();
          this.id = id;
          this.name = name;
@@ -39,6 +53,7 @@ public class Animal implements Serializable {
          this.lifeExpectancy = lifeExpectancy;
          this.dietaryRegime = dietaryRegime;
          this.threatLevel = threatLevel;
+         this.pool = pool;
     }
     public Animal(String name, String species) {
         super();

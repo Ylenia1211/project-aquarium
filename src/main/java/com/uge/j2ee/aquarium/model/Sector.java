@@ -19,7 +19,7 @@ public class Sector implements Serializable {
     private String name;
     private String localitation;
 
-    @OneToMany(mappedBy = "poolSector")
+    @OneToMany(mappedBy = "poolSector", fetch = FetchType.EAGER)
     @JsonIdentityReference
     private Set<Pool> sectorPools = new HashSet<>();
 

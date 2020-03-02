@@ -3,13 +3,20 @@
     <thead>
     <tr>
       <th>Name</th>
+      <th>State</th>
+      <th>Capacity</th>
       <th>Responsable</th>
+      <th>Sector</th>
     </tr>
     </thead>
     <tbody>
     <tr>
       <td> <b>{{pool.namePool.toUpperCase()}}</b></td>
+      <td> {{pool.state}}</td>
+      <td> {{pool.volume}}</td>
       <td> {{pool.responsable.name}}</td>
+      <td>{{pool.poolSector.name}}, {{pool.poolSector.localitation}} </td>
+
       <td> <button class="btn btn-danger" *ngIf="loginService.isUserLoggedIn()" (click)="delete()"> Delete </button></td>
     </tr>
     </tbody>

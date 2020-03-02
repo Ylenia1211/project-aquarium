@@ -2,8 +2,10 @@ package com.uge.j2ee.aquarium.controller;
 
 import com.uge.j2ee.aquarium.model.Employee;
 import com.uge.j2ee.aquarium.model.Pool;
+import com.uge.j2ee.aquarium.model.Sector;
 import com.uge.j2ee.aquarium.service.EmployeeService;
 import com.uge.j2ee.aquarium.service.PoolService;
+import com.uge.j2ee.aquarium.service.SectorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,6 +18,8 @@ public class PoolController {
     PoolService poolService;
     @Autowired
     EmployeeService employeeService;
+    @Autowired
+    SectorService sectorService;
 
 
     @GetMapping("/pool")
@@ -28,11 +32,13 @@ public class PoolController {
         return poolService.getById(id);
     }
 
-    @PostMapping("/pool/employee/{employeeId}")
+    @PostMapping("/pool/employee/{employeeId}/sector/{sectorId}")
     @ResponseBody
-    public Pool create(@RequestBody Pool pool, @PathVariable String employeeId) {
+    public Pool create(@RequestBody Pool pool, @PathVariable String employeeId, @PathVariable String sectorId) {
         Employee employeeRes = employeeService.getById(employeeId);
         pool.setResponsable(employeeRes);
+        Sector poolSec = sectorService.getById(sectorId);
+        pool.setPoolSector(poolSec);
         return poolService.save(pool);
     }
 

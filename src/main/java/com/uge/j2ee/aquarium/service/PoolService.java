@@ -1,8 +1,5 @@
 package com.uge.j2ee.aquarium.service;
-
-import com.uge.j2ee.aquarium.model.Employee;
 import com.uge.j2ee.aquarium.model.Pool;
-import com.uge.j2ee.aquarium.repository.EmployeeRepository;
 import com.uge.j2ee.aquarium.repository.PoolRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

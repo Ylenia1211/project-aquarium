@@ -18,8 +18,8 @@ export class PoolService {
 
 
 
-  save(pool: Pool, id: number): Observable<any> {
-    return this.http.post("/pool/employee/"+id, pool)
+  save(pool: Pool, id: number, idSec:number): Observable<any> {
+    return this.http.post("/pool/employee/"+id+"/sector/"+idSec, pool)
   }
 
 

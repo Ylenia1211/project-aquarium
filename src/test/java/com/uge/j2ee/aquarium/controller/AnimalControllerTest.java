@@ -89,7 +89,7 @@ public class AnimalControllerTest {
         System.out.println(request);
         assertEquals(updateP1, request);
     }
-/*
+
     @Test
     public void testDeleteAnimal() {
         Animal p1 = new Animal(1L, "Axolotl", "Tropical");
@@ -97,9 +97,10 @@ public class AnimalControllerTest {
         Animal response = this.restTemplate
                 .exchange("http://localhost:" + port + "/animal/1", HttpMethod.DELETE, null, Animal.class)
                 .getBody();
+        assert response != null;
         assertEquals(Long.valueOf(1L), response.getId());
         assertEquals(p1, response);
     }
-*/
+
 
 }

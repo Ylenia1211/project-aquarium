@@ -1,6 +1,4 @@
 package com.uge.j2ee.aquarium.controller;
-
-import com.uge.j2ee.aquarium.model.Animal;
 import com.uge.j2ee.aquarium.model.Employee;
 
 import com.uge.j2ee.aquarium.service.EmployeeService;

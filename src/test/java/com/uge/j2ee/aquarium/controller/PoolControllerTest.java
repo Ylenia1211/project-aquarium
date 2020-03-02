@@ -1,11 +1,28 @@
 package com.uge.j2ee.aquarium.controller;
-
+import com.uge.j2ee.aquarium.model.Pool;
+import com.uge.j2ee.aquarium.service.PoolService;
 import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.boot.test.web.client.TestRestTemplate;
+import org.springframework.boot.web.server.LocalServerPort;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.Assert.*;
 
 public class PoolControllerTest {
+    @LocalServerPort
+    private int port = 8080;
 
+    @Autowired
+    private TestRestTemplate restTemplate;
+
+    @MockBean
+    PoolService poolService;
+
+    private List<Pool> pools = new ArrayList<Pool>();
     @Test
     public void getAll() {
     }

@@ -1,1 +1,43 @@
-<p>creation-activity works!</p>
+<div class="col-md-6">
+  <h2>New Activity Aquarium</h2>
+  <form [formGroup]="addActivityForm">
+    <div class="form-group">
+      <label>
+        Add Name:
+        <input type="text" formControlName="nameActivity"  placeholder="name Activity" name="nameActivity" class="form-control">
+      </label>
+    </div>
+
+    <div class="form-group">
+      <label>
+        Add Data:
+        <input type="date" formControlName="dataCal"  placeholder="data activity" name="dataCal" class="form-control">
+      </label>
+    </div>
+
+    <div class="form-group">
+      <label>
+        Add Start Time:
+        <input type="time" formControlName="start"  placeholder="start activity" name="start" class="form-control">
+      </label>
+    </div>
+
+    <div class="form-group">
+      <label>
+        Add End Time:
+        <input type="time" formControlName="end"  placeholder="end activity" name="end" class="form-control">
+      </label>
+    </div>
+
+    <div class="column small-12 large-2">
+      <label class="sbw_light">State Activity: </label><br />
+      <select formControlName="state">
+        <option *ngFor="let type of stateType"
+                [value]="type">{{type}}
+        </option>
+      </select>
+    </div>
+
+    <button class="btn btn-success" (click)="save($event)" [disabled]="!addActivityForm.valid">Save</button>
+  </form>
+</div>

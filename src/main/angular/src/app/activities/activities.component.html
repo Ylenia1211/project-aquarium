@@ -1,1 +1,5 @@
-<p>activities works!</p>
+<ul>
+  <li *ngFor=" let act of activities">
+    <app-activity [activity]="act"  (onDelete)="refresh($event)"></app-activity>
+  </li>
+</ul>

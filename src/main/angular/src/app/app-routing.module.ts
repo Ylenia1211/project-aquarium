@@ -15,6 +15,9 @@ import {PoolsComponent} from "./pools/pools.component";
 import {SectorService} from "./sectors/sector.service";
 import {SectorsComponent} from "./sectors/sectors.component";
 import {CreationSectorComponent} from "./sectors/creation-sector/creation-sector.component";
+import {CreationActivityComponent} from "./activities/creation-activity/creation-activity.component";
+import {ActivityComponent} from "./activities/activity/activity.component";
+import {ActivitiesComponent} from "./activities/activities.component";
 
 
 const routes: Routes = [
@@ -30,6 +33,8 @@ const routes: Routes = [
   { path:'viewPool', component: PoolsComponent},
   { path:'viewSector', component:SectorsComponent},
   { path:'createSector', component:CreationSectorComponent},
+  { path:'createActivity', component:CreationActivityComponent},
+  { path:'viewActivity', component:ActivitiesComponent},
 ];
 
 @NgModule({

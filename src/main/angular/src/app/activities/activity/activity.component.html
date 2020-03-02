@@ -1,1 +1,25 @@
-<p>activity works!</p>
+<div class="col-md-6">
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Data</th>
+      <th>Start Time</th>
+      <th>End Time</th>
+      <th>State</th>
+      <th>Delete Activity</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td> <b>{{activity.nameActivity.toUpperCase()}}</b></td>
+      <td> {{activity.dataCal}}</td>
+      <td> {{activity.start}}</td>
+      <td> {{activity.end}}</td>
+      <td> {{activity.state}}</td>
+      <td> <button class="btn btn-danger" *ngIf="loginService.isUserLoggedIn()" (click)="delete()"> Delete </button></td>
+    </tr>
+    </tbody>
+  </table>
+</div>

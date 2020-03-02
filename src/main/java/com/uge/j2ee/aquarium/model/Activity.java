@@ -5,9 +5,11 @@ import com.fasterxml.jackson.annotation.JsonIdentityReference;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import javax.persistence.*;
+import java.sql.Time;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
+
 
 @Entity
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id", scope = Activity.class)
@@ -18,12 +20,17 @@ public class Activity {
     private Long id;
     private String nameActivity;
     private Date dataCal;
-    //add time start and end
-    private String state;
+    private String start;
+    private String end;
+    private String state;  //public,private
 
-    @OneToMany(mappedBy = "activity")
+
+
+    @OneToMany(mappedBy = "activity", fetch = FetchType.EAGER)
     @JsonIdentityReference
     private Set<Pool> poolActivity = new HashSet<>();
+
+    //add Employee
 
     public Activity() {
     }
@@ -66,5 +73,21 @@ public class Activity {
 
     public void setPoolActivity(Set<Pool> poolActivity) {
         this.poolActivity = poolActivity;
+    }
+
+    public String getStart() {
+        return start;
+    }
+
+    public void setStart(String start) {
+        this.start = start;
+    }
+
+    public String getEnd() {
+        return end;
+    }
+
+    public void setEnd(String end) {
+        this.end = end;
     }
 }

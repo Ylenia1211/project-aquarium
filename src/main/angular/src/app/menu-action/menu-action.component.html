@@ -17,7 +17,7 @@
       <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/addSpecies" class="nav-link">Add Species</a></li>
 
         <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/createSector" class="nav-link">Add Sector</a></li>
-        <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/viewSector" class="nav-link">Sectors</a></li>
+        <li><a  routerLink="/viewSector" class="nav-link">Sectors</a></li>
         <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/logout" class="nav-link">Logout</a></li>
         <li><a *ngIf="!loginService.isUserLoggedIn()" routerLink="/login" class="nav-link">Login</a></li>
       </ul>

@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = [[module.i, "\n@import url(https://unpkg.com/bootstrap@4.1.0/dist/css/bootstrap.min.css);\n/* You can add global styles to this file, and also import other style files */\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9zdHlsZXMuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7QUFDQSx5RUFBeUU7QUFEekUsOEVBQThFIiwiZmlsZSI6InNyYy9zdHlsZXMuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLyogWW91IGNhbiBhZGQgZ2xvYmFsIHN0eWxlcyB0byB0aGlzIGZpbGUsIGFuZCBhbHNvIGltcG9ydCBvdGhlciBzdHlsZSBmaWxlcyAqL1xuQGltcG9ydCB1cmwoaHR0cHM6Ly91bnBrZy5jb20vYm9vdHN0cmFwQDQuMS4wL2Rpc3QvY3NzL2Jvb3RzdHJhcC5taW4uY3NzKTtcbiJdfQ== */", '', '']]
+module.exports = [[module.i, "\n@import url(https://unpkg.com/bootstrap@4.1.0/dist/css/bootstrap.min.css);\n/* You can add global styles to this file, and also import other style files */\n\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9zdHlsZXMuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7QUFDQSx5RUFBeUU7QUFEekUsOEVBQThFIiwiZmlsZSI6InNyYy9zdHlsZXMuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLyogWW91IGNhbiBhZGQgZ2xvYmFsIHN0eWxlcyB0byB0aGlzIGZpbGUsIGFuZCBhbHNvIGltcG9ydCBvdGhlciBzdHlsZSBmaWxlcyAqL1xuQGltcG9ydCB1cmwoaHR0cHM6Ly91bnBrZy5jb20vYm9vdHN0cmFwQDQuMS4wL2Rpc3QvY3NzL2Jvb3RzdHJhcC5taW4uY3NzKTtcblxuIl19 */", '', '']]
 
 /***/ }),
 

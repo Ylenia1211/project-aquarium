@@ -13,7 +13,7 @@ import java.util.Set;
 
 @Entity
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "idEmployee", scope = Employee.class)
-public class Employee {
+public class Employee implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(unique = true,nullable = false)

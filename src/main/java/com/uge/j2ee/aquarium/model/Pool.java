@@ -16,7 +16,7 @@ import static javax.persistence.CascadeType.ALL;
 
 @Entity
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "idPool", scope = Pool.class)
-public class Pool{
+public class Pool implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

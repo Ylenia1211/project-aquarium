@@ -1,8 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Employee} from "../../Employee";
 import {EmployeeService} from "../../employee.service";
-import {Animal} from "../../Animal";
-import {AnimalServiceService} from "../../animal-service.service";
 import {AuthenticationService} from "../../authentication.service";
 
 @Component({

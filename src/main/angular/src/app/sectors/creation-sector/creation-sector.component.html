@@ -1,0 +1,20 @@
+<div class="col-md-6">
+  <h2 class="text-center">Sector Aquarium</h2>
+  <form [formGroup]="addSectorForm">
+    <div class="form-group">
+      <label>
+        Add name:
+        <input type="text" formControlName="name"  placeholder="Name new sector" name="name" class="form-control">
+      </label>
+    </div>
+
+    <div class="form-group">
+      <label>
+        Add Localitation:
+        <input type="text" formControlName="localitation" placeholder="Localitation sector" name="localitation" class="form-control">
+      </label>
+    </div>
+    <button class="btn btn-success" (click)="save($event)" [disabled]="!addSectorForm.valid">Save</button>
+  </form>
+</div>
+

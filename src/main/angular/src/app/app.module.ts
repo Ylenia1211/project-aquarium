@@ -20,6 +20,12 @@ import { SpecieComponent } from './species/specie/specie.component';
 import { PoolsComponent } from './pools/pools.component';
 import { PoolComponent } from './pools/pool/pool.component';
 import { CreationPoolComponent } from './pools/creation-pool/creation-pool.component';
+import { SectorsComponent } from './sectors/sectors.component';
+import { CreationSectorComponent } from './sectors/creation-sector/creation-sector.component';
+import { SectorComponent } from './sectors/sector/sector.component';
+import { ActivitiesComponent } from './activities/activities.component';
+import { CreationActivityComponent } from './activities/creation-activity/creation-activity.component';
+import { ActivityComponent } from './activities/activity/activity.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +44,13 @@ import { CreationPoolComponent } from './pools/creation-pool/creation-pool.compo
     SpecieComponent,
     PoolsComponent,
     PoolComponent,
-    CreationPoolComponent
+    CreationPoolComponent,
+    SectorsComponent,
+    CreationSectorComponent,
+    SectorComponent,
+    ActivitiesComponent,
+    CreationActivityComponent,
+    ActivityComponent
   ],
   imports: [
     BrowserModule,

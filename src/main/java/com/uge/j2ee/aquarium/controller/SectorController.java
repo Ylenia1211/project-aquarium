@@ -27,8 +27,8 @@ public class SectorController {
 
     @PostMapping("/sector")
     @ResponseBody
-    public Sector create(@RequestBody Sector employee) {
-        return sectorService.save(employee);
+    public Sector create(@RequestBody Sector sector) {
+        return sectorService.save(sector);
     }
 
     @PutMapping("/sector/{id}")

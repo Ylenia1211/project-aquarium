@@ -1,0 +1,5 @@
+<ul>
+  <li *ngFor=" let s of sectors">
+    <app-sector [sector]="s" (onDelete)="refresh($event)"></app-sector>
+  </li>
+</ul>

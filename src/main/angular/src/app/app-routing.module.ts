@@ -12,6 +12,9 @@ import {SpeciesComponent} from "./species/species.component";
 import {CreationSpecieComponent} from "./species/creation-specie/creation-specie.component";
 import {CreationPoolComponent} from "./pools/creation-pool/creation-pool.component";
 import {PoolsComponent} from "./pools/pools.component";
+import {SectorService} from "./sectors/sector.service";
+import {SectorsComponent} from "./sectors/sectors.component";
+import {CreationSectorComponent} from "./sectors/creation-sector/creation-sector.component";
 
 
 const routes: Routes = [
@@ -25,6 +28,8 @@ const routes: Routes = [
   { path:'addSpecies', component: CreationSpecieComponent},
   { path:'createPool', component: CreationPoolComponent},
   { path:'viewPool', component: PoolsComponent},
+  { path:'viewSector', component:SectorsComponent},
+  { path:'createSector', component:CreationSectorComponent},
 ];
 
 @NgModule({

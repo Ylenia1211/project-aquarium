@@ -38,6 +38,9 @@ public class Pool implements Serializable{
     @JsonIdentityReference
     private Set<Animal> fishPool= new HashSet<>();
 
+    @OneToMany(mappedBy = "poolActivity", fetch = FetchType.EAGER)
+    @JsonIdentityReference
+    private Set<Activity> activityPools = new HashSet<>();
 
 
     private Integer volume; //volume of water
@@ -92,7 +95,7 @@ public class Pool implements Serializable{
     public String getNamePool() {
         return namePool;
     }
-    
+
     public Employee getResponsable() {
         return responsable;
     }

@@ -38,6 +38,24 @@
       </select>
     </div>
 
+    <div class="column small-12 large-2">
+      <label class="sbw_light">Employee Responsable: </label><br />
+      <select  formControlName="responsableAct">
+        <option *ngFor="let resp of responsable_employees"
+                [value]="resp.idEmployee">{{resp.name}}
+        </option>
+      </select>
+    </div>
+
+    <div class="column small-12 large-2">
+      <label class="sbw_light">Pool Activity: </label><br />
+      <select  formControlName="poolActivity">
+        <option *ngFor="let p of pools"
+                [value]="p.idPool">{{p.namePool}}
+        </option>
+      </select>
+    </div>
+
     <button class="btn btn-success" (click)="save($event)" [disabled]="!addActivityForm.valid">Save</button>
   </form>
 </div>

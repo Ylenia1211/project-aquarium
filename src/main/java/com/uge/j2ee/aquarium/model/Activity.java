@@ -25,12 +25,19 @@ public class Activity {
     private String state;  //public,private
 
 
-
-    @OneToMany(mappedBy = "activity", fetch = FetchType.EAGER)
+    @ManyToOne
+    @JoinColumn(name ="employee_activity_id")
     @JsonIdentityReference
-    private Set<Pool> poolActivity = new HashSet<>();
+    private Employee responsableAct;
 
-    //add Employee
+    @ManyToOne
+    @JoinColumn(name ="pool_activity_id")
+    @JsonIdentityReference
+    private Pool poolActivity;
+
+    public Pool getPoolActivity() {
+        return poolActivity;
+    }
 
     public Activity() {
     }
@@ -41,6 +48,18 @@ public class Activity {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Employee getResponsableAct() {
+        return responsableAct;
+    }
+
+    public void setResponsableAct(Employee responsableAct) {
+        this.responsableAct = responsableAct;
+    }
+
+    public void setPoolActivity(Pool poolActivity) {
+        this.poolActivity = poolActivity;
     }
 
     public String getNameActivity() {
@@ -67,13 +86,6 @@ public class Activity {
         this.state = state;
     }
 
-    public Set<Pool> getPoolActivity() {
-        return poolActivity;
-    }
-
-    public void setPoolActivity(Set<Pool> poolActivity) {
-        this.poolActivity = poolActivity;
-    }
 
     public String getStart() {
         return start;

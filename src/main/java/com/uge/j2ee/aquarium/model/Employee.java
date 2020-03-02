@@ -30,7 +30,17 @@ public class Employee implements Serializable{
    // @OneToOne(fetch = FetchType.LAZY)
     //@JoinColumn(name="idPool", nullable=true)
    // private Pool poolResponsable;
+   @OneToMany(mappedBy = "responsableAct")
+   @JsonIdentityReference
+   private Set<Activity> activitiesResp= new HashSet<>();
 
+    public Set<Activity> getActivitiesResp() {
+        return activitiesResp;
+    }
+
+    public void setActivitiesResp(Set<Activity> activitiesResp) {
+        this.activitiesResp = activitiesResp;
+    }
 
     public Set<Pool> getPoolResponsable() {
         return poolResponsable;

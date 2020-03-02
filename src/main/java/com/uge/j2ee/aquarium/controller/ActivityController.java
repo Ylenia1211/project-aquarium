@@ -2,8 +2,10 @@ package com.uge.j2ee.aquarium.controller;
 
 import com.uge.j2ee.aquarium.model.Activity;
 import com.uge.j2ee.aquarium.model.Employee;
+import com.uge.j2ee.aquarium.model.Pool;
 import com.uge.j2ee.aquarium.service.ActivityService;
 import com.uge.j2ee.aquarium.service.EmployeeService;
+import com.uge.j2ee.aquarium.service.PoolService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,6 +16,10 @@ public class ActivityController {
 
     @Autowired
     ActivityService activityService;
+    @Autowired
+    PoolService poolService;
+    @Autowired
+    EmployeeService employeeService;
 
     @GetMapping("/activity")
     public Iterable<Activity> getAll() {
@@ -25,9 +31,13 @@ public class ActivityController {
         return activityService.getById(id);
     }
 
-    @PostMapping("/activity")
+    @PostMapping("/activity/pool/{poolId}/employee/{employeeId}")
     @ResponseBody
-    public Activity create(@RequestBody Activity activity) {
+    public Activity create(@RequestBody Activity activity,@PathVariable String poolId, @PathVariable String employeeId) {
+        Employee employeeRes = employeeService.getById(employeeId);
+        Pool poolRes= poolService.getById(poolId);
+        activity.setPoolActivity(poolRes);
+        activity.setResponsableAct(employeeRes);
         return activityService.save(activity);
     }
 

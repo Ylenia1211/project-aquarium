@@ -1,14 +1,9 @@
 package com.uge.j2ee.aquarium.model;
-
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIdentityReference;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
-
 import javax.persistence.*;
-import java.sql.Time;
 import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
 
 
 @Entity

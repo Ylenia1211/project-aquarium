@@ -34,24 +34,19 @@ public class Employee implements Serializable{
    @JsonIdentityReference
    private Set<Activity> activitiesResp= new HashSet<>();
 
-    public Set<Activity> getActivitiesResp() {
-        return activitiesResp;
+    public Employee(Long idEmployee, String name, String surname) {
+        super();
+        this.idEmployee = idEmployee;
+        this.name = name;
+        this.surname = surname;
+
     }
 
-    public void setActivitiesResp(Set<Activity> activitiesResp) {
-        this.activitiesResp = activitiesResp;
-    }
 
-    public Set<Pool> getPoolResponsable() {
-        return poolResponsable;
-    }
-
-    public void setPoolResponsable(Set<Pool> poolResponsable) {
-        this.poolResponsable = poolResponsable;
-    }
 
     public Employee() {
     }
+
 
 
 
@@ -101,6 +96,22 @@ public class Employee implements Serializable{
 
     public void setDesignation(String designation) {
         this.designation = designation;
+    }
+
+    public Set<Activity> getActivitiesResp() {
+        return activitiesResp;
+    }
+
+    public void setActivitiesResp(Set<Activity> activitiesResp) {
+        this.activitiesResp = activitiesResp;
+    }
+
+    public Set<Pool> getPoolResponsable() {
+        return poolResponsable;
+    }
+
+    public void setPoolResponsable(Set<Pool> poolResponsable) {
+        this.poolResponsable = poolResponsable;
     }
 
     @Override
